@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Battle Buzzer</title>
+
+   
+
+</head>
+
+<body>
+
+    <div id="pantallaPrincipal" >
+
+        <div id="fondo">
+
+            <div id="logo-container">
+
+                <img src="logo.png" alt="Logo Battle Buzzer" id="logo">
+
+            </div>
+
+            <div id="contenedor-botones">
+
+                <div id="cuadro-blanco">
+
+                    <input type="text" id="nombreUsuario" placeholder="Ingresa tu nombre" required>
+
+                    <span id="errorNombre" style="color: red; display: none;">Debes ingresar un nombre.</span><br><br>
+
+                    <button id="crearSala">Crear Sala</button>
+
+                    <div id="o-unirse">
+
+                        <p>o unirse a una sala</p>
+
+                        <input type="text" id="codigoSala" placeholder="Código de sala">
+
+                        <button id="unirseSala">Unirse a Sala</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="pantallaEspera"  >
+
+        <div id="espera-container">
+
+            <div id="espera-header">
+
+                <button id="salirSala">Salir</button>
+
+                <span id="codigoSalaTexto">Código de sala: </span><span id="codigoSalaEspera"></span>
+
+                <button id="copiarCodigo">Copiar</button>
+
+            </div>
+
+            <div id="espera-body">
+
+                <div id="logo-salaespera">
+
+                    <img src="logo.png" alt="Logo Battle Buzzer" id="logo">
+
+                </div>
+
+                <div id="versus-container">
+
+                    <span class="vs-text">VS</span>
+
+                </div>
+
+                <div id="equipos-container">
+
+                    <div class="equipo-tabla azul">
+
+                        <h2>Equipo Azul</h2>
+
+                        <ul id="listaAzul"></ul>
+
+                        <button id="unirmeAzul">Unirme</button>
+
+                    </div>
+
+                    <div class="equipo-tabla rojo">
+
+                        <h2>Equipo Rojo</h2>
+
+                        <ul id="listaRojo"></ul>
+
+                        <button id="unirmeRojo">Unirme</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div id="espera-footer">
+
+                <button id="iniciarJuego">Iniciar Juego</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div id="pantallaJuego">
+        <div id="juego-header"> <button id="salirJuego">Salir</button> </div>
+        <div id="contador-container">
+            <h1 id="contador"></h1>
+        </div>
+        <div id="pregunta-container"></div>
+        <div id="contenedor-principal-juego"> 
+            <div class="equipo-juego azul">
+                <h2>Equipo Azul</h2>
+                <span id="puntuacionAzul">0</span>
+                <ul id="listaAzulJuego"></ul>
+            </div>
+            <div id="respuestas-container"></div>
+            <div class="equipo-juego rojo">
+                <h2>Equipo Rojo</h2>
+                <span id="puntuacionRojo">0</span>
+                <ul id="listaRojoJuego"></ul>
+            </div>
+        </div>
+          <center>  <button id="botonPresionar" disabled>Presionar</button></center>
+    </div>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

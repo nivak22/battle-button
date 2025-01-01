@@ -1,0 +1,712 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: white;
+}
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+/* ... resto de tu CSS ... */
+
+
+#fondo {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100vw;
+
+    height: 100vh;
+
+    background: rgb(46, 134, 192);
+    /* Fondo azul */
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+
+#fondo::before {
+    /* Línea blanca vertical */
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 10px;
+
+    height: 100%;
+
+    background-color: white;
+
+    transform: translateX(-50%);
+
+    z-index: 1;
+    /* Encima de todo */
+
+}
+
+
+
+#fondo::after {
+    /* Fondo rojo */
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 50%;
+
+    width: 50%;
+
+    height: 100%;
+
+    background-color: red;
+
+    z-index: 0;
+    /* Detrás de todo */
+
+}
+
+
+
+#logo-container {
+
+    margin-bottom: 20px;
+
+    z-index: 2;
+    /* Asegura que el logo esté visible */
+
+    position: relative;
+    /* Crea un nuevo contexto de apilamiento */
+
+}
+
+
+
+#logo {
+
+    max-width: 500px;
+
+    max-height: 300px;
+
+}
+
+
+
+#cuadro-blanco {
+
+    background-color: white;
+
+    padding: 80px;
+
+    border-radius: 10px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    z-index: 2;
+    /* Asegura que el cuadro blanco esté visible */
+
+    position: relative;
+    /* Crea un nuevo contexto de apilamiento */
+
+}
+
+
+
+button {
+
+    padding: 10px 20px;
+
+    margin: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background-color: #4CAF50;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s;
+
+}
+
+
+
+button:hover {
+
+    background-color: #45a049;
+
+}
+
+
+
+#o-unirse {
+
+    margin-top: 10px;
+
+}
+
+
+
+#o-unirse p {
+
+    margin: 5px;
+
+}
+
+
+
+/*sala de espera*/
+
+
+
+
+
+
+
+/* Estilos para la PANTALLA PRINCIPAL (ejemplo) */
+
+#logo-salaespera {
+
+    margin-bottom: 0px;
+
+    z-index: 2;
+    /* Asegura que el logo esté visible */
+
+    position: relative;
+    /* Crea un nuevo contexto de apilamiento */
+
+}
+
+
+
+
+
+
+
+/* Estilos ESPECÍFICOS para la PANTALLA DE ESPERA */
+
+#pantallaEspera {
+    display: flex; /* Para centrar cuando se muestra */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #ffe6e6; 
+}
+
+
+
+#espera-container {
+
+    background-color: white;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    box-sizing: border-box;
+    /* Inherit size from parent */
+
+}
+
+
+
+#espera-header {
+
+    display: flex;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #ddd;
+
+    padding-bottom: 10px;
+
+}
+
+
+
+#espera-body {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+}
+
+
+
+#versus-container {
+
+    margin: 20px 0;
+
+    text-align: center;
+
+}
+
+
+
+.vs-text {
+
+    font-size: 3em;
+
+    font-weight: bold;
+
+    color: #888;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+
+}
+
+
+
+#equipos-container {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    width: 100%;
+
+    gap: 20px;
+
+}
+
+
+
+.equipo-tabla {
+
+    width: calc(50% - 10px);
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    min-height: 200px;
+
+}
+
+
+
+.equipo-tabla.azul {
+
+    background-color: #e6f2ff;
+
+    border: 2px solid #3498db;
+
+    color: #3498db;
+
+}
+
+
+
+.equipo-tabla.rojo {
+
+    background-color: #ffe6e6;
+
+    border: 2px solid #e74c3c;
+
+    color: #e74c3c;
+
+}
+
+
+
+.equipo-tabla h2 {
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.equipo-tabla ul {
+
+    list-style: none;
+
+    padding: 0;
+
+    flex-grow: 1;
+
+    width: 100%;
+
+    text-align: center;
+
+}
+
+
+
+.equipo-tabla li {
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+
+
+.equipo-tabla li:last-child {
+
+    border-bottom: none;
+
+}
+
+
+
+/* Estilos para los botones */
+
+#pantallaEspera button {
+    /* Botones SOLO dentro de #pantallaEspera */
+
+    padding: 10px 20px;
+
+    margin: 10px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s, transform 0.2s;
+
+}
+
+
+
+#pantallaEspera button:hover {
+
+    transform: scale(1.05);
+
+}
+
+
+
+#pantallaEspera #unirmeAzul {
+
+    background-color: #3498db;
+
+}
+
+
+
+#pantallaEspera #unirmeAzul:hover {
+
+    background-color: #2980b9;
+
+}
+
+
+
+#pantallaEspera #unirmeRojo {
+
+    background-color: #e74c3c;
+
+}
+
+
+
+#pantallaEspera #unirmeRojo:hover {
+
+    background-color: #c0392b;
+
+}
+
+
+
+#pantallaEspera #iniciarJuego,
+#pantallaEspera #salirSala,
+#pantallaEspera #copiarCodigo {
+
+    background-color: #34495e;
+
+}
+
+
+
+#pantallaEspera #iniciarJuego:hover,
+#pantallaEspera #salirSala:hover,
+#pantallaEspera #copiarCodigo:hover {
+
+    background-color: #2c3e50;
+
+}
+
+
+
+#espera-footer {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #ddd;
+
+}
+
+
+
+
+
+/*sala de juego*/
+#pantallaJuego {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: white;
+    position: relative; /* Importante: para que el botón se posicione relativamente a este contenedor */
+}
+
+
+
+#contador-container {
+
+    position: absolute;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: 5em;
+
+    font-weight: bold;
+
+    color: black;
+    /* Contador en negro */
+
+    text-shadow: none;
+    /* Quitar la sombra */
+
+    z-index: 3;
+    /* Asegurar que esté encima de todo */
+
+    display: none;
+    /* Ocultar inicialmente */
+
+}
+
+
+
+#pregunta-container {
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+    padding: 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    margin-bottom: 20px; /* Espacio debajo de la pregunta */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+#respuestas-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+#respuestas-container button {
+    width: 300px; /* Ancho fijo para que sean largos */
+    padding: 15px 20px; /* Espaciado interno */
+    border-radius: 25px; /* Bordes muy redondeados */
+    border: none;
+    color: black;
+    background-color: #eee; /* Color de fondo inicial */
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease; /* Transición suave para los colores */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+#respuestas-container button.correcta {
+    background-color: green;
+    color: white;
+}
+#respuestas-container button.incorrecta {
+    background-color: red;
+    color: white;
+}
+#respuestas-container button.boton-deshabilitado{
+    background-color: gray;
+    cursor: default;
+    opacity: 0.6;
+    box-shadow: none; /*quita la sombra cuando esta deshabilitado*/
+}
+#botonPresionar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    font-size: 24px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    user-select: none;
+    margin-top: 20px; /* Espacio arriba del botón */
+}
+
+#botonPresionar.boton-deshabilitado {
+    background-color: gray;
+    cursor: default;
+    opacity: 0.6;
+    box-shadow: none; /*quita la sombra cuando esta deshabilitado*/
+}
+
+#botonPresionar.boton-habilitado {
+    background-color: green;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al habilitar */
+}
+
+
+
+
+#equipos-juego {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    width: 80%;
+
+    margin-bottom: 20px;
+
+}
+
+.equipo-juego span { /* Estilos para las puntuaciones */
+    font-size: 1.5em; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    margin-left: 10px; /* Espacio entre el título del equipo y la puntuación */
+}
+
+#contenedor-principal-juego {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+    width: 100%;
+    padding: 20px;
+}
+
+.equipo-juego {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.equipo-juego h2, .equipo-juego span{
+    margin-bottom: 10px;
+}
+
+
+.equipo-juego.azul {
+
+    background-color: rgba(0, 0, 255, 0.2);
+    /* Azul claro con transparencia */
+
+    border-color: blue;
+
+}
+
+
+
+.equipo-juego.rojo {
+
+    background-color: rgba(255, 0, 0, 0.2);
+    /* Rojo claro con transparencia */
+
+    border-color: red;
+
+}
+
+.equipo-juego ul{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.equipo-juego li {
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #ddd;
+
+}
+
+.equipo-juego li:last-child {
+
+    border-bottom: none;
+
+}
+.boton-deshabilitado {
+    background-color: gray;
+    cursor: default;
+    opacity: 0.6; /* Añadido para mejor visibilidad */
+}
+
+#temporizador-respuestas {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none; /* Oculto inicialmente */
+}
+
