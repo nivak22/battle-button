@@ -1,19 +1,15 @@
 const express = require('express');
-const app = express();
 const http = require('http');
+const { Server } = require('socket.io');
+const path = require('path');
+const { v4: uuidv4 } = require('uuid');
+
+const app = express();
 const server = http.createServer(app);
-const io = require('socket.io')(server);
+const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
 const salas = {};
-
-// Servir archivos estáticos desde la carpeta 'cliente'
-app.use(express.static('cliente'));
-
-// Cuando alguien accede a la ruta principal, servimos el archivo index.html
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/cliente/index.html');
-});
 
 const preguntas = {
     ciencia: [

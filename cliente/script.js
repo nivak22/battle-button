@@ -1,4 +1,4 @@
-const socket = io('https://battlebutton-30af06049b06.herokuapp.com/');
+const socket = io('http://localhost:3000');
 
 
 
