@@ -1,6 +1,8 @@
 const express = require('express');
-const app = express();
 const http = require('http');
+const { Server } = require('socket.io');
+const path = require('path'); // Asegúrate de que esta línea esté presente
+const { v4: uuidv4 } = require('uuid');
 const server = http.createServer(app);
 const io = require('socket.io')(server);
 
