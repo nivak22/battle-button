@@ -1,10 +1,12 @@
 const express = require('express');
+const app = express(); // Definición de app
 const http = require('http');
 const { Server } = require('socket.io');
-const path = require('path'); // Asegúrate de que esta línea esté presente
+const path = require('path');
 const { v4: uuidv4 } = require('uuid');
-const server = http.createServer(app);
-const io = require('socket.io')(server);
+
+const server = http.createServer(app); // Uso de app después de su definición
+const io = new Server(server);
 
 const PORT = process.env.PORT || 3000;
 const salas = {};
