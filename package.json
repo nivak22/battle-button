@@ -2,6 +2,8 @@
   "name": "battle-buzzer",
   "version": "1.0.0",
   "main": "index.js",
+  "start": "node index.js",
+
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,4 +16,5 @@
     "socket.io": "^4.8.1",
     "uuid": "^11.0.3"
   }
+  
 }

@@ -371,26 +371,28 @@ socket.on('pregunta', (preguntaData) => {
     respuestasContainer.innerHTML = '';
     botonesRespuesta = [];
     botonPresionado = false;
-    botonPresionar.disabled = true; // Deshabilitar el botón principal al inicio de cada pregunta
-    botonPresionar.classList.remove("boton-habilitado");//quita la clase verde
-    botonPresionar.classList.add("boton-deshabilitado");//agrega la clase gris
+    botonPresionar.disabled = true;
+    botonPresionar.classList.remove("boton-habilitado");
+    botonPresionar.classList.add("boton-deshabilitado");
 
-    const preguntaElemento = document.createElement('h2');
-    preguntaElemento.textContent = preguntaData.pregunta;
-    preguntaContainer.appendChild(preguntaElemento);
+    const imagenPregunta = document.createElement('img'); // Crear elemento de imagen
+    imagenPregunta.src = preguntaData.imagen;
+    imagenPregunta.alt = "Pregunta";
+    imagenPregunta.classList.add('imagen-pregunta');
+    preguntaContainer.appendChild(imagenPregunta);
 
-    preguntaData.respuestas.forEach(respuesta => {
+    preguntaData.opciones.forEach(respuesta => {
         const botonRespuesta = document.createElement('button');
         botonRespuesta.textContent = respuesta;
-        botonRespuesta.disabled = true;
+        botonRespuesta.disabled = true; // Inicialmente deshabilitados
         botonRespuesta.classList.add("boton-deshabilitado")
         botonRespuesta.addEventListener('click', () => {
-            if(!botonRespuesta.disabled){
+             if(!botonRespuesta.disabled){
                 socket.emit('respuesta', { codigoSala: codigoSalaActual, respuesta: respuesta });
                 botonesRespuesta.forEach(boton => {
                     boton.disabled = true;
                     boton.classList.add("boton-deshabilitado")
-                }); // Deshabilitar todos los botones después de responder
+                });
             }
         });
         respuestasContainer.appendChild(botonRespuesta);
